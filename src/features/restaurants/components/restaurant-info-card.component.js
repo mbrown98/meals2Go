@@ -16,21 +16,24 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     isClosedTemporarily,
   } = restaurant;
   return (
-    <Card elevation={5} style={styles.card}>
-      <Card.Cover style={styles.cover} source={{ uri: photos[0] }} />
+    <RestaurantCard elevation={5}>
+      <RestaurantCardCover source={{ uri: photos[0] }} />
       <Title>{name}</Title>
-    </Card>
+    </RestaurantCard>
   );
 };
 
-const styles = StyleSheet.create({
-  card: { backgroundColor: "white" },
-  cover: { padding: 20, backgroundColor: "white" },
-  text: {
-    padding: 16,
-  },
-});
+// STYLES
+const RestaurantCard = styled(Card)`
+  background-color: white;
+`;
 
-const Title = styled.Text`
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: 20px;
+  color: red;
+`;
+
+const Title = styled(Text)`
   padding: 16px;
+  color: red;
 `;
